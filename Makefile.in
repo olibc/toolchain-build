@@ -532,7 +532,7 @@ stmp-build-target-gcc: stmp-config-target-gcc
 	&& $(STAMP) $@
 install-target-gcc-gcc: stmp-build-target-gcc
 	($(canadian_env) \
-	 $(MAKE) -C ${GCC_VERSION} $(gcc_install_target))
+	 $(MAKE) -j1 -C ${GCC_VERSION} $(gcc_install_target))
 install-target-gcc: install-target-gcc-gcc $(install-target-gcc-multilibs)
 
 # minimal gcc rules
